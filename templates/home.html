@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Species Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Iris Flower Species Prediction</h1>
+        
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="PetalLengthCm" placeholder="Petal Length (cm)" required="required" /><br>
+            <input type="text" name="PetalWidthCm" placeholder="Petal Width (cm)" required="required" /><br>
+            <input type="text" name="SepalLengthCm" placeholder="Sepal Length (cm)" required="required" /><br>
+            <input type="text" name="SepalWidthCm" placeholder="Sepal Width (cm)" required="required" /><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <br><br>
+
+        <!-- Display Prediction Result -->
+        <div>
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+</html>
